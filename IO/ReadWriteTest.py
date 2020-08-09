@@ -1,0 +1,7 @@
+f = open('input.in', 'r')
+print(f.mode)
+f_content = f.read()
+print(f.readline())
+print(f.readline())
+print(f.read())
+f.close()
