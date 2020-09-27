@@ -9,14 +9,20 @@ form a valid right triangle
 2.If it's valid, calculate it's area and find the maximum area
 '''
 def is_right_triangle(x1,x2,x3,y1,y2,y3) -> bool:
+    return (x1 == x2 or x1 == x3 or x2 == x3) and \
+           (y1 == y2 or y1 == y3 or y2 == y3)
+    '''
     return x1 == x2 and y2 == y3 or \
            x1 == x3 and y2 == y3 or \
            x2 == x3 and y1 == y3 or \
            x2 == x3 and y1 == y2 or \
            x1 == x2 and y1 == y2 or \
-           x1 == x3 and y1 == y2
+           x1 == x3 and y1 == y2 or \
+           x1 == x2 and y1 == y3 or \
+           
+           '''
 
-with open("8.in", 'r') as input_file:
+with open("triangles.in", 'r') as input_file:
     num_coordinates = int(input_file.readline())
     coordinate_list = []
     for i in range(0, num_coordinates):
