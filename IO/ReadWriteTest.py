@@ -1,7 +1,9 @@
 f = open('input.in', 'r')
-print(f.mode)
-f_content = f.read()
-print(f.readline())
-print(f.readline())
-print(f.read())
+line1 = f.readline().split()
+line2 = f.readline()
+line3 = f.readline()
+line4 = f.readline().split()
+
+print(line4)
+
 f.close()
