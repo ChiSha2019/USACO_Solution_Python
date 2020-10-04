@@ -1,3 +1,4 @@
+#like cutting rope?
 with open("1.in", "r") as input_file:
     stall_num = int(input_file.readline())
     current_stall = input_file.readline()
