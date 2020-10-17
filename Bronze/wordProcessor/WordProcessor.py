@@ -6,6 +6,10 @@ with open("word.in", "r") as input_file:
     result = []
     line2 = input_file.readline().split()
     #with open("/Users/qixia/PycharmProjects/USACO/Bronze/wordProcessor/word_bronze_jan20/myoutput.out","w") as output_file:
+    '''
+    strategy: have a current length, 
+    check if current length + incoming word length > max_char_num
+    '''
     with open("word.out", "w") as output_file:
         cur_len = 0
         for i in range(word_num):
@@ -16,6 +20,7 @@ with open("word.in", "r") as input_file:
             else:
                 output_file.write(line2[i])
                 cur_len += len(line2[i])
+            ''' try not to print space at the end of each line'''
             if i < word_num - 1 and len(line2[i + 1]) + cur_len <= max_char_num:
                 output_file.write(" ")
 
