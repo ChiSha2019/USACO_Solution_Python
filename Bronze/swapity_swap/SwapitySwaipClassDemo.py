@@ -43,7 +43,8 @@ with open("swap.in", "r") as input_file:
 
     if isCyclic:
         remainder = k % period
-        for i in range(0,remainder):
+        #redundant computation, dictionary
+        for i in range(0, remainder):
             cows = reverse(cows, a1, a2)
             cows = reverse(cows, b1, b2)
 
