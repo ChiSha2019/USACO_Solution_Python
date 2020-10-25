@@ -30,11 +30,4 @@ with open("race.in", "r") as input_file:
             '''
             check if we need to switch to flat top
             '''
-
-            #print(time_sharptop - vf_item - 1)
-            '''
-            sharptop_dist = time_sharptop * time_sharptop / 2 + vf_item * time_sharptop / 2 - vf_item * vf_item / 4
-            if sharptop_dist - total_dist > :
-                time -= 1
-            '''
             output_file.write(str(time) + "\n")
