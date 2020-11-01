@@ -10,7 +10,7 @@ with open("photo.in", "r") as input_file:
         a_list.append(i)
         a_set.add(i)
         for item in b_list:
-            nextItemInA = item - a_list[-1]
+            nextItemInA = item - a_list[i-1]
             if nextItemInA > cow_num or nextItemInA <= 0 or nextItemInA in a_set:
                 a_list.clear()
                 a_set.clear()
