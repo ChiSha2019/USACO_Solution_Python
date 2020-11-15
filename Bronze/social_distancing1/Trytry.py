@@ -1,4 +1,4 @@
-gap_start = -1
+largest_gap_start = -1
 
 
 def copy_list(old_list: list) -> list:
@@ -16,7 +16,7 @@ def find_largest_interior_gap(stall_list):
         if stall_list[i] == "1":
             if current_start != -1 and i - current_start > biggest_gap:
                 biggest_gap = i - current_start
-                global gap_start
+                global largest_gap_start
                 gap_start = current_start
 
             current_start = i
@@ -38,7 +38,7 @@ def find_smallest_interior_gap(stall_list):
     return smallest_gap
 
 def try_cow_in_largest_gap(stall_list):
-    global gap_start
+    global largest_gap_start
     largest_gap = find_largest_interior_gap(stall_list)
     #'''evenly divide the largest gap'''
     if largest_gap >= 2:
