@@ -1,3 +1,12 @@
+
+'''
+/*
+ * Strategy:
+ * 1.read in the line as a 2D array
+ * 2.reversely map the 2D array value to index
+ * 3.compare vertically the 2D array to check consistency
+ * */
+'''
 with open("1.in", "r") as input_file:
     line1 = input_file.readline().split()
     K = int(line1[0])
