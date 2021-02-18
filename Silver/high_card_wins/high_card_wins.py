@@ -14,7 +14,8 @@ with open("highcard.in", "r") as input_file:
         else:
             bessie.append(i)
 
-    #greedy from small to big
+    #greedy compare bessie and elsie from small to big,
+    # use smallest from bessie to compare with elsie
     score = 0
     bessie_index = 0
     elsie_index = 0
