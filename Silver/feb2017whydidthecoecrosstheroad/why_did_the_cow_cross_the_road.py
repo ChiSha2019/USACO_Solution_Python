@@ -4,7 +4,7 @@ to cross the road the earliest, as this gives us the most
 flexibility to assign chickens to cows in the future.
 '''
 
-from bisect import bisect_right
+from bisect import bisect_left
 
 
 class Cow:
@@ -49,7 +49,7 @@ with open("5.in", "r") as input_file:
                 break'''
 
     for cow in list_cow:
-        i = bisect_right(list_t_chick, cow.start)
+        i = bisect_left(list_t_chick, cow.start)
         if i < len(list_t_chick) and cow.start <= list_t_chick[i] <= cow.end:
             count += 1
             list_t_chick.pop(i)

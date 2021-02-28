@@ -1,5 +1,6 @@
 from bisect import bisect_left
 from bisect import bisect_right
+
 class Cow:
     def __init__(self, start, end):
         self.start = start
@@ -7,7 +8,7 @@ class Cow:
 
     def __lt__(self, other):
         if self.end == other.end:
-            return self.start > other.start
+            return self.start < other.start
         return self.end < other.end
 
     def __gt__(self, other):
@@ -31,7 +32,7 @@ with open("helpcross.in","r") as input_f:
     cow_visted = [False] * N
 
     for cow in list_cow:
-        i = bisect_left(list_chick, cow.start)
+        i = bisect_left(list_chick, cow.start) #must use biset_left
         if i < len(list_chick) and list_chick[i] <= cow.end:
             count += 1
             list_chick.pop(i)
