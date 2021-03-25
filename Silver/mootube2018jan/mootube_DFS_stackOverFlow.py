@@ -1,10 +1,5 @@
-class Edge:
-    def __init__(self, other_node, weight):
-        self.other_node = other_node
-        self.weight = weight
 
-
-with open("8.in", "r") as input_file:
+with open("1.in", "r") as input_file:
     line1 = input_file.readline().split()
     N = int(line1[0])
     Q = int(line1[1])
@@ -26,14 +21,11 @@ with open("8.in", "r") as input_file:
         else:
             adjList[y] = [[x, w]]
 
-    print(adjList)
-
     visited = [False] * (N+1)
 
     #cause stack overflow
     def dfs(node, k):
         visited[node] = True
-        print(node)
         for next in adjList[node]:
             if (not visited[next[0]]) and next[1] >= k:
                 dfs(next[0], k)
