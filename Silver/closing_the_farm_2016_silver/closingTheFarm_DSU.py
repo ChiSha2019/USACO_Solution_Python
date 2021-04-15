@@ -90,17 +90,18 @@ with open("closing.in", "r") as input_file:
 
         num_of_disjoint_set =0
         is_connected = []
-        activated = [False] * (N+1) #whether a node is currently inside of my graph
+        visited = [False] * (N + 1) #whether a node is currently inside of my graph
         for i in range(N):
             node_to_add = close_node[i]
             num_of_disjoint_set += 1
 
             #add any new edges
-            activated[node_to_add] = True
+            visited[node_to_add] = True
 
             for adj_n in adjList[node_to_add]:
-                #make sure this node and the adjacent node are all in the graph
-                if activated[node_to_add] and activated[adj_n] and disjSet.find(node_to_add) != disjSet.find(adj_n):
+                #make sure this node and the adjacent node are all added in the graph
+                #
+                if visited[node_to_add] and visited[adj_n] and disjSet.find(node_to_add) != disjSet.find(adj_n):
                     disjSet.Union(node_to_add, adj_n)
                     num_of_disjoint_set -= 1 #union two set will decrease the number of disjset
 
